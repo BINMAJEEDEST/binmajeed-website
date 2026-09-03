@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePageBody from "../components/ServicePageBody.astro";
+
+const subServices = [
+  { title: "PRO Services", description: "Day-to-day government transactions handled on your behalf, so you or your team don't need to queue at a government office." },
+  { title: "Government Transactions", description: "Submission and follow-up for routine transactions with Dubai and federal government departments." },
+  { title: "Government Liaison Services", description: "Ongoing coordination with government authorities on behalf of individuals and companies." },
+  { title: "External Approvals", description: "Coordination of approvals required from external authorities as part of a licence, visa or business process." },
+];
+
+const faqItems = [
+  { q: "What counts as a PRO service?", a: "PRO (Public Relations Officer) services cover the government-facing paperwork that keeps a business or individual's status up to date — transaction submissions, renewals, and liaising with authorities on your behalf." },
+  { q: "Can you handle PRO work for my company on an ongoing basis?", a: "Yes, this is one of our most common arrangements. Tell us about your team's requirements and we'll explain how it would work." },
+  { q: "Do I need to visit a government office myself?", a: "In most cases, no — that's the point of a PRO service. Some steps, such as biometrics or a medical test, may still require your presence, and we'll let you know in advance if that applies." },
+];
+---
+<BaseLayout
+  title="PRO Services in Dubai"
+  description="PRO services, government transactions and liaison services in Dubai — handled directly with UAE authorities by Bin Majeed Documents Clearing Services."
+  path="/pro-services"
+>
+  <ServicePageBody
+    eyebrow="PRO Services"
+    title="PRO services that keep your paperwork moving"
+    intro="We handle the recurring government transactions that come with living or running a business in the UAE — submitted and followed up directly with the relevant authority."
+    subServices={subServices}
+    faqItems={faqItems}
+  />
+</BaseLayout>

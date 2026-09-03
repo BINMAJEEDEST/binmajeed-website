@@ -1,0 +1,30 @@
+---
+import { site, waLink } from "../data/site";
+interface Props { heading?: string; body?: string; }
+const {
+  heading = "Ready to get your paperwork moving?",
+  body = "Send us your requirement on WhatsApp or call our office — we'll tell you exactly what's needed and take it from there.",
+} = Astro.props as Props;
+---
+<section class="section-navy final-cta">
+  <div class="container final-cta-inner">
+    <div>
+      <h2>{heading}</h2>
+      <p>{body}</p>
+    </div>
+    <div class="cta-row">
+      <a href={waLink("Hi, I'd like to request a service.")} class="btn btn-primary" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      <a href={site.phoneHref} class="btn btn-ghost-light">Call {site.phoneDisplay}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .final-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .final-cta-inner h2 { margin-bottom: 10px; }
+  .final-cta-inner p { margin: 0; }
+  .final-cta .cta-row { margin-top: 0; flex-shrink: 0; }
+  @media (max-width: 720px) {
+    .final-cta-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>

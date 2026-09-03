@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePageBody from "../components/ServicePageBody.astro";
+
+const subServices = [
+  { title: "Company Formation", description: "Guidance and paperwork for setting up a new company in the UAE." },
+  { title: "Business Setup", description: "End-to-end support for getting a new business operational, from registration to your first trade licence." },
+  { title: "Mainland Company Services", description: "Licensing and registration support for mainland company structures." },
+  { title: "Free Zone Company Services", description: "Setup support for free zone company structures." },
+  { title: "Trade Licence Services", description: "New trade licence applications, renewals and amendments." },
+];
+
+const faqItems = [
+  { q: "Should I set up a mainland or free zone company?", a: "It depends on your business activity, target customers, and ownership preferences. Tell us about your business and we'll talk you through the options relevant to your case." },
+  { q: "How long does company formation take?", a: "Timing depends on the business activity, structure and authority involved. Once we understand what you're setting up, we'll give you a realistic timeline." },
+  { q: "Can you help renew an existing trade licence?", a: "Yes — we handle both new licence applications and renewals." },
+];
+---
+<BaseLayout
+  title="Business Setup & Company Formation in Dubai"
+  description="Mainland and free zone company formation, trade licence and business setup services in Dubai, from Bin Majeed Documents Clearing Services."
+  path="/business-setup"
+>
+  <ServicePageBody
+    eyebrow="Business Setup & Company Formation"
+    title="Getting your business registered and licensed"
+    intro="We support the paperwork side of starting or restructuring a business in the UAE, so you can focus on actually running it."
+    subServices={subServices}
+    faqItems={faqItems}
+  />
+</BaseLayout>

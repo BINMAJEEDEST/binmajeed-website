@@ -1,0 +1,106 @@
+---
+import { services } from "../data/site";
+---
+<form
+  name="enquiry"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="company-website"
+  class="enquiry-form"
+  id="enquiry-form"
+  action="/thank-you"
+>
+  <input type="hidden" name="form-name" value="enquiry" />
+  <p class="hp-field"><label>Leave this field blank<input name="company-website" /></label></p>
+
+  <div class="form-row">
+    <label for="name">Full name</label>
+    <input type="text" id="name" name="name" required autocomplete="name" />
+  </div>
+
+  <div class="form-row form-row-split">
+    <div>
+      <label for="phone">Phone / WhatsApp number</label>
+      <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+    </div>
+    <div>
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" autocomplete="email" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="service">Service you need</label>
+    <select id="service" name="service">
+      <option value="">Not sure yet</option>
+      {services.map((s) => <option value={s.title}>{s.title}</option>)}
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <fieldset class="form-row">
+    <legend>Preferred contact method</legend>
+    <div class="radio-group">
+      <label><input type="radio" name="preferred_contact" value="WhatsApp" checked /> WhatsApp</label>
+      <label><input type="radio" name="preferred_contact" value="Phone call" /> Phone call</label>
+      <label><input type="radio" name="preferred_contact" value="Email" /> Email</label>
+    </div>
+  </fieldset>
+
+  <div class="form-row">
+    <label for="message">What do you need help with?</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block">Send Enquiry</button>
+  <p class="form-note">We typically reply within one business day.</p>
+
+  <p class="form-success" id="form-success" role="status" hidden>
+    Thank you — your enquiry has been received. We'll contact you shortly using your preferred method.
+  </p>
+</form>
+
+<style>
+  .enquiry-form { display: flex; flex-direction: column; gap: 20px; }
+  .hp-field { position: absolute; left: -9999px; }
+  .form-row { display: flex; flex-direction: column; gap: 7px; border: none; padding: 0; margin: 0; }
+  .form-row-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-row-split > div { display: flex; flex-direction: column; gap: 7px; }
+  label, legend { font-size: 0.9rem; font-weight: 600; color: var(--text); padding: 0; }
+  input, select, textarea {
+    font-family: var(--font-body); font-size: 1rem; padding: 12px 14px;
+    border: 1px solid var(--border); border-radius: var(--radius-sm); background: #fff; color: var(--text);
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--navy-600); }
+  .radio-group { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 4px; }
+  .radio-group label { display: flex; align-items: center; gap: 6px; font-weight: 400; font-size: 0.95rem; }
+  .form-note { font-size: 0.82rem; color: var(--text-muted); text-align: center; margin: 0; }
+  .form-success {
+    background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 16px; font-size: 0.95rem; color: var(--text); margin: 0;
+  }
+  @media (max-width: 560px) {
+    .form-row-split { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById("enquiry-form") as HTMLFormElement | null;
+  const success = document.getElementById("form-success");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+      });
+      form.hidden = true;
+      if (success) success.hidden = false;
+    } catch {
+      form.submit();
+    }
+  });
+</script>

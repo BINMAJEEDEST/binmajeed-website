@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePageBody from "../components/ServicePageBody.astro";
+
+const subServices = [
+  { title: "Document Clearing", description: "Preparation, verification and submission of documents to the relevant department or authority." },
+  { title: "Document Verification", description: "Checking that your documents are complete and accurate before they're submitted." },
+  { title: "Additional Government Transactions", description: "If your requirement isn't listed on this site, get in touch — many government-related transactions can be handled through our team." },
+];
+
+const faqItems = [
+  { q: "My requirement isn't listed on this site — can you still help?", a: "Possibly. Send us the details of what you need and we'll tell you honestly whether it's something we handle, or point you in the right direction if it isn't." },
+  { q: "Can you check my documents before I submit them myself?", a: "Yes — document verification is one of our core services, whether or not we handle the final submission." },
+];
+---
+<BaseLayout
+  title="Other Document & Government Services in Dubai"
+  description="Document clearing, verification and additional government transaction support in Dubai from Bin Majeed Documents Clearing Services."
+  path="/other-services"
+>
+  <ServicePageBody
+    eyebrow="Other Services"
+    title="Document clearing and additional support"
+    intro="Beyond our main service categories, we handle a range of document clearing and verification work — and we're happy to advise even if your case falls outside a standard category."
+    subServices={subServices}
+    faqItems={faqItems}
+  />
+</BaseLayout>

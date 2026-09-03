@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site, waLink } from "../data/site";
+---
+<BaseLayout
+  title="Thank You"
+  description="Thank you for contacting Bin Majeed Documents Clearing Services."
+  path="/thank-you"
+>
+  <section class="thanks">
+    <div class="container">
+      <span class="eyebrow">Enquiry received</span>
+      <h1>Thank you — we've got your message.</h1>
+      <p class="lede">
+        We typically reply within one business day using your preferred contact method. If your
+        request is urgent, message us directly on WhatsApp.
+      </p>
+      <div class="cta-row">
+        <a href={waLink("Hi, I just sent an enquiry through your website.")} class="btn btn-primary" target="_blank" rel="noopener">Message us on WhatsApp</a>
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .thanks { padding-top: 96px; padding-bottom: 120px; text-align: left; max-width: 640px; }
+  .thanks .lede { margin: 18px 0 0; }
+  .thanks .cta-row { margin-top: 32px; }
+</style>

@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePageBody from "../components/ServicePageBody.astro";
+
+const subServices = [
+  { title: "Labour / MOHRE Services", description: "Labour contract registration, amendments and related MOHRE transactions." },
+  { title: "Labour Card Processing", description: "Applications and renewals for employee labour cards." },
+  { title: "Government Transactions (Labour-related)", description: "Follow-up on labour-related submissions with the relevant authority on your behalf." },
+];
+
+const faqItems = [
+  { q: "Do you handle MOHRE transactions for companies with several employees?", a: "Yes — this is common for companies that need ongoing support as staff join, renew, or leave." },
+  { q: "What is a labour card and do I need one?", a: "A labour card is generally required for employees on a UAE work visa. Tell us about your situation and we'll confirm what applies to your case." },
+  { q: "Can you amend an existing labour contract?", a: "Yes, we handle amendments as well as new registrations." },
+];
+---
+<BaseLayout
+  title="Government & Labour Services in Dubai"
+  description="MOHRE and labour transaction services in Dubai — contract registration, amendments and labour card processing, handled by Bin Majeed."
+  path="/government-labour"
+>
+  <ServicePageBody
+    eyebrow="Government & Labour Services"
+    title="Labour and government transactions, kept up to date"
+    intro="We handle MOHRE and related labour transactions for companies and individuals, so your employment records stay compliant without the back-and-forth."
+    subServices={subServices}
+    faqItems={faqItems}
+  />
+</BaseLayout>

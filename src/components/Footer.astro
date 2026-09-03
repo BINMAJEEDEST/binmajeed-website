@@ -1,0 +1,80 @@
+---
+import { site, services } from "../data/site";
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="brand" aria-label={`${site.name} — Home`}>
+        <img src="/images/logo.jpg" alt="" width="36" height="36" />
+        <span>Bin Majeed</span>
+      </a>
+      <p>Documents clearing, PRO services and business setup support for individuals and companies across Dubai and the UAE.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Services</h3>
+      <ul>
+        {services.map((s) => (
+          <li><a href={`/${s.slug}`}>{s.title}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <ul class="footer-contact">
+        <li><a href={site.phoneHref}>{site.phoneDisplay}</a></li>
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li>{site.address}</li>
+        <li>{site.hours}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; {year} Bin Majeed Documents Clearing Services. All rights reserved.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Al+Safiya+Building+Abu+Hail+Dubai" target="_blank" rel="noopener">Get Directions</a>
+  </div>
+</footer>
+
+<style>
+  .site-footer { background: var(--bg-navy); color: var(--text-on-navy); padding-top: 64px; }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px;
+    padding-bottom: 48px; border-bottom: 1px solid var(--border-on-navy);
+  }
+  .footer-brand .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin-bottom: 14px; }
+  .footer-brand .brand img { border-radius: var(--radius-sm); }
+  .footer-brand p { color: var(--text-on-navy-muted); font-size: 0.92rem; max-width: 32ch; margin: 0; }
+  .footer-col h3 { color: var(--text-on-navy); font-size: 0.85rem; text-transform: none; margin-bottom: 16px; font-family: var(--font-body); font-weight: 600; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { color: var(--text-on-navy-muted); font-size: 0.92rem; }
+  .footer-col a:hover { color: #fff; }
+  .footer-contact li { color: var(--text-on-navy-muted); font-size: 0.92rem; }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    padding: 24px 0;
+  }
+  .footer-bottom p { color: var(--text-on-navy-muted); font-size: 0.85rem; margin: 0; }
+  .footer-bottom a { color: var(--text-on-navy-muted); font-size: 0.85rem; }
+  .footer-bottom a:hover { color: #fff; }
+
+  @media (max-width: 860px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>

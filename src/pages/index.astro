@@ -1,0 +1,229 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Faq from "../components/Faq.astro";
+import FinalCta from "../components/FinalCta.astro";
+import { site, services, waLink } from "../data/site";
+
+const faqItems = [
+  {
+    q: "What documents do I need to get started?",
+    a: "It depends on the service — a visa application, trade licence renewal and labour transaction each need different paperwork. Send us a message with what you're trying to do and we'll confirm exactly what's required for your case.",
+  },
+  {
+    q: "How long does the process usually take?",
+    a: "Processing time depends on the service and the government authority involved. Once we understand your case, we'll give you a realistic timeline based on our experience rather than a general estimate.",
+  },
+  {
+    q: "Can you help if I'm not based near your office?",
+    a: "Yes. We work with clients across Dubai and the wider UAE, and many steps can be handled remotely — documents can be sent digitally or by courier where the process allows it.",
+  },
+  {
+    q: "Do you work with both individuals and companies?",
+    a: "Yes — from a single personal visa application to ongoing PRO support for a company with several employees.",
+  },
+  {
+    q: "How do I start a request?",
+    a: "Message us on WhatsApp, call our office, or fill in the enquiry form on this site. We'll ask a few questions about your case and confirm the next step.",
+  },
+];
+---
+<BaseLayout
+  title="PRO Services, Visa & Business Setup in Dubai"
+  description="Bin Majeed handles PRO services, visa processing, business setup and government transactions in Dubai — with direct follow-up until your case is complete."
+  path="/"
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Documents Clearing &amp; PRO Services · Dubai</span>
+        <h1>Government paperwork in Dubai, handled from start to finish.</h1>
+        <p class="lede">
+          Bin Majeed manages your visa, trade licence, labour and document clearing requirements
+          directly with UAE authorities — and follows up until your case is actually done.
+        </p>
+        <div class="cta-row">
+          <a href={waLink("Hi, I'd like to request a service.")} class="btn btn-primary" target="_blank" rel="noopener">Message us on WhatsApp</a>
+          <a href="/contact" class="btn btn-secondary">Request a Quote</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-row">
+          <span class="tag-number">01</span>
+          <div>
+            <h3>Tell us what you need</h3>
+            <p>WhatsApp, call, or the enquiry form.</p>
+          </div>
+        </div>
+        <div class="hero-panel-row">
+          <span class="tag-number">02</span>
+          <div>
+            <h3>We confirm the requirements</h3>
+            <p>Documents, fees and realistic timing.</p>
+          </div>
+        </div>
+        <div class="hero-panel-row">
+          <span class="tag-number">03</span>
+          <div>
+            <h3>We handle it with the authority</h3>
+            <p>Submission and follow-up, direct.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <section class="trust-bar section-alt">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <span class="trust-figure">3+ yrs</span>
+        <span class="trust-label">Serving Dubai clients</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-figure">5</span>
+        <span class="trust-label">Service categories, one office</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-figure">Direct</span>
+        <span class="trust-label">Submission to government authorities</span>
+      </div>
+      <div class="trust-item">
+        <a href="https://www.google.com/maps/search/?api=1&query=Bin+Majeed+Documents+Clearing+Services+Dubai" target="_blank" rel="noopener" class="trust-figure trust-link">
+          Read our reviews on Google →
+        </a>
+        <span class="trust-label">See what past clients say</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <div class="container">
+      <span class="eyebrow">What we handle</span>
+      <h2>Services built around what you're trying to get done</h2>
+      <div class="grid grid-3 services-grid">
+        {services.map((s) => (
+          <a href={`/${s.slug}`} class="block service-card">
+            <h3>{s.title}</h3>
+            <p>{s.short}</p>
+            <span class="service-link">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="section-alt why-us">
+    <div class="container why-us-grid">
+      <div>
+        <span class="eyebrow">Why clients work with us</span>
+        <h2>Real follow-up, not just a submission stamp</h2>
+        <p class="lede">A lot of clearing services stop at dropping off your paperwork. Ours doesn't.</p>
+      </div>
+      <div class="grid grid-2 why-us-list">
+        <div class="block">
+          <h3>We deal with the authority directly</h3>
+          <p>Submissions and follow-up are handled by our own team, not passed to a third party.</p>
+        </div>
+        <div class="block">
+          <h3>Everything under one roof</h3>
+          <p>PRO services, visas, business setup and labour transactions — no need to juggle separate providers.</p>
+        </div>
+        <div class="block">
+          <h3>Straightforward communication</h3>
+          <p>We tell you what's needed, what it costs, and where your case stands — in plain language.</p>
+        </div>
+        <div class="block">
+          <h3>Based locally in Dubai</h3>
+          <p>Our office near Abu Hail Metro Station is easy to reach for document handover and collection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas served -->
+  <section class="areas">
+    <div class="container areas-grid">
+      <div>
+        <span class="eyebrow">Areas served</span>
+        <h2>Dubai-based, working across the UAE</h2>
+        <p>
+          Our office is in Dubai, near Abu Hail Metro Station, and we support individuals and
+          companies across Dubai and the wider UAE — including cases that involve federal
+          authorities such as MOHRE and UAE immigration.
+        </p>
+      </div>
+      <div class="areas-panel block">
+        <h3>Who we typically work with</h3>
+        <ul class="areas-list">
+          <li>Individuals and families across Dubai</li>
+          <li>Companies and HR teams based in Dubai</li>
+          <li>Cases involving Dubai and UAE federal authorities</li>
+          <li>Clients elsewhere in the UAE, supported remotely</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-alt faq-section">
+    <div class="container faq-container">
+      <span class="eyebrow">Frequently asked</span>
+      <h2>Common questions</h2>
+      <Faq items={faqItems} />
+    </div>
+  </section>
+
+  <FinalCta />
+</BaseLayout>
+
+<style>
+  .hero { padding-top: 72px; padding-bottom: 72px; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 0.9fr; gap: 56px; align-items: start; }
+  .hero-panel {
+    border: 1px solid var(--border); border-radius: var(--radius-md); padding: 8px;
+    display: flex; flex-direction: column;
+  }
+  .hero-panel-row {
+    display: flex; gap: 18px; padding: 22px 18px; align-items: flex-start;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-panel-row:last-child { border-bottom: none; }
+  .hero-panel-row h3 { font-size: 1rem; margin-bottom: 4px; }
+  .hero-panel-row p { font-size: 0.9rem; margin: 0; }
+
+  .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .trust-item { display: flex; flex-direction: column; gap: 6px; }
+  .trust-figure { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--navy-900); }
+  .trust-link { font-size: 1.05rem; color: var(--red-600); }
+  .trust-label { font-size: 0.88rem; color: var(--text-muted); }
+
+  .services-grid { margin-top: 40px; }
+  .service-card { display: flex; flex-direction: column; gap: 10px; }
+  .service-card h3 { margin-bottom: 0; }
+  .service-card p { font-size: 0.94rem; margin-bottom: 4px; }
+  .service-link { font-size: 0.9rem; font-weight: 600; color: var(--red-600); }
+  .service-card:hover { border-color: var(--navy-600); }
+
+  .why-us-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items: start; }
+  .why-us-list { margin-top: 0; }
+
+  .areas-grid { display: grid; grid-template-columns: 1fr 0.75fr; gap: 48px; align-items: start; }
+  .areas-panel h3 { font-size: 0.95rem; margin-bottom: 16px; }
+  .areas-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .areas-list li { position: relative; padding-left: 18px; font-size: 0.94rem; color: var(--text-muted); }
+  .areas-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; background: var(--red-600); }
+  @media (max-width: 780px) {
+    .areas-grid { grid-template-columns: 1fr; }
+  }
+
+  .faq-container { max-width: 820px; }
+  .faq-container h2 { margin-bottom: 32px; }
+
+  @media (max-width: 920px) {
+    .hero-grid, .why-us-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

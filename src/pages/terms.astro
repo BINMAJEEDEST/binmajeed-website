@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+<BaseLayout
+  title="Terms & Conditions"
+  description="Terms and conditions for using the Bin Majeed Documents Clearing Services website."
+  path="/terms"
+>
+  <section class="legal-page">
+    <div class="container legal-container">
+      <span class="eyebrow">Legal</span>
+      <h1>Terms &amp; Conditions</h1>
+      <p class="lede">Last updated: [DATE]</p>
+
+      <p>
+        These terms apply to your use of this website. They do not constitute a service
+        agreement — the specific terms of any service we carry out for you will be confirmed
+        separately.
+      </p>
+
+      <h2>Use of this website</h2>
+      <p>
+        This website is provided for general information about the services offered by{" "}
+        {site.name}. While we aim to keep the information accurate and up to date, processing
+        times, fees and requirements set by government authorities can change, and we recommend
+        confirming current details with us directly before relying on anything stated here.
+      </p>
+
+      <h2>No guaranteed outcomes</h2>
+      <p>
+        Government approvals, visa issuance and similar outcomes are determined by the relevant
+        UAE authorities, not by {site.name}. We do not guarantee approval, processing time, or
+        outcome for any application or transaction.
+      </p>
+
+      <h2>Enquiry form submissions</h2>
+      <p>
+        Submitting the enquiry form does not create a service agreement. It allows us to contact
+        you to discuss your requirement.
+      </p>
+
+      <h2>Contact us</h2>
+      <p>
+        Questions about these terms can be sent to <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+
+      <p class="legal-note">
+        [This page is a starting template. We recommend having it reviewed by a UAE-qualified
+        legal advisor before launch, alongside your actual service agreements and trade licence
+        terms.]
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-page { padding-top: 64px; padding-bottom: 96px; }
+  .legal-container { max-width: 720px; }
+  .legal-container h1 { margin-bottom: 6px; }
+  .legal-container .lede { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 32px; }
+  .legal-container h2 { font-size: 1.15rem; margin-top: 36px; }
+  .legal-note { margin-top: 40px; padding: 16px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.88rem; color: var(--text-muted); max-width: none; }
+</style>

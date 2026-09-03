@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePageBody from "../components/ServicePageBody.astro";
+
+const subServices = [
+  { title: "UAE Visa Services", description: "Applications and renewals for standard UAE residence visas." },
+  { title: "Family Visa Services", description: "Sponsorship processing for spouses, children and other eligible family members." },
+  { title: "Employment Visa Services", description: "Work visa processing for new and existing employees." },
+  { title: "Immigration Services", description: "General transactions with UAE federal immigration authorities." },
+  { title: "Medical & Visa Processing Assistance", description: "Coordination of the medical fitness step that's part of most visa applications." },
+  { title: "Emirates ID Related Services", description: "New applications, renewals and updates to Emirates ID records." },
+];
+
+const faqItems = [
+  { q: "Do you handle both new visa applications and renewals?", a: "Yes, we handle both — tell us which stage you're at and we'll confirm what's needed." },
+  { q: "Can you sponsor family members for me?", a: "Family visa eligibility depends on requirements set by UAE authorities, such as income and relationship documentation. Tell us about your situation and we'll confirm what applies before starting the process." },
+  { q: "How does the medical test fit into the visa process?", a: "Most residence visa applications include a medical fitness test at an approved centre. We'll coordinate the booking and let you know what to expect." },
+];
+---
+<BaseLayout
+  title="Visa & Immigration Services in Dubai"
+  description="UAE visa, family visa, employment visa and Emirates ID services in Dubai, processed directly with government authorities by Bin Majeed."
+  path="/visa-immigration"
+>
+  <ServicePageBody
+    eyebrow="Visa & Immigration Services"
+    title="Visa and immigration paperwork, handled properly"
+    intro="From a single family visa to ongoing employment visa processing for your team, we manage the application from documentation through to approval."
+    subServices={subServices}
+    faqItems={faqItems}
+  />
+</BaseLayout>

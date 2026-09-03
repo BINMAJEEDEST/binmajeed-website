@@ -1,0 +1,75 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import "../styles/global.css";
+import { site } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  schema?: object;
+}
+
+const { title, description, path = "/", schema } = Astro.props;
+const canonicalURL = new URL(path, site.domain).toString();
+const ogImage = new URL("/images/og-cover.jpg", site.domain).toString();
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": site.name,
+  "image": new URL("/images/logo.jpg", site.domain).toString(),
+  "url": site.domain,
+  "telephone": site.phoneDisplay,
+  "email": site.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Office GR87, Al Safiya Building, Near Abu Hail Metro Station",
+    "addressLocality": "Dubai",
+    "addressCountry": "AE",
+  },
+  "openingHours": "Sa-Th 09:00-18:30",
+  "areaServed": "Dubai, United Arab Emirates",
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Bin Majeed Documents Clearing Services</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/images/favicon-180.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} | Bin Majeed Documents Clearing Services`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_AE" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Bin Majeed Documents Clearing Services`} />
+    <meta name="twitter:description" content={description} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+  </body>
+</html>
