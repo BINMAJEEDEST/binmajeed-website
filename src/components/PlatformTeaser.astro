@@ -1,0 +1,161 @@
+---
+import { waLink } from "../data/site";
+---
+<section class="platform-teaser" data-reveal-group>
+  <div class="container platform-grid">
+    <div class="platform-copy">
+      <span class="eyebrow">Coming soon</span>
+      <h2>One dashboard for every company's PRO status</h2>
+      <p class="lede">
+        We're building a platform where your company can track employee visas, trade licence
+        renewals, health insurance and other PRO-related expiries in one place — and send us
+        requests directly when something needs action.
+      </p>
+      <ul class="platform-points">
+        <li>Employee visa &amp; Emirates ID expiry tracking</li>
+        <li>Trade licence renewal reminders</li>
+        <li>Company health insurance status</li>
+        <li>Submit and track requests with our team directly</li>
+      </ul>
+      <div class="cta-row">
+        <a href={waLink("Hi, I'd like to be notified when the PRO tracking platform launches.")} class="btn btn-primary" target="_blank" rel="noopener">
+          Get notified at launch
+        </a>
+      </div>
+    </div>
+
+    <div class="platform-visual" id="dashboard-tilt">
+      <span class="soon-badge">Launching Soon</span>
+      <svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" class="dashboard-svg" role="img" aria-label="Preview of the upcoming PRO tracking dashboard">
+        <defs>
+          <clipPath id="cardClip">
+            <rect x="0" y="0" width="640" height="460" rx="18" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#cardClip)">
+          <rect x="0" y="0" width="640" height="460" fill="#FFFFFF" />
+          <rect x="0" y="0" width="640" height="460" fill="none" />
+
+          <!-- top bar -->
+          <rect x="0" y="0" width="640" height="60" fill="#10192E" />
+          <circle cx="28" cy="30" r="5" fill="#C62828" />
+          <circle cx="46" cy="30" r="5" fill="#E7B24A" opacity="0.9" />
+          <circle cx="64" cy="30" r="5" fill="#3E9C6E" opacity="0.9" />
+          <text x="94" y="35" fill="#EEF1F8" font-size="15" font-weight="600" font-family="var(--font-display)">PRO Tracker — Dashboard</text>
+          <text x="520" y="35" fill="#A9B3CC" font-size="12" font-family="var(--font-body)">Your Company LLC</text>
+
+          <!-- status cards -->
+          <g>
+            <rect x="24" y="84" width="184" height="108" rx="10" fill="#F4F5F8" stroke="#E2E5EC" />
+            <circle cx="44" cy="106" r="5" fill="#E7B24A" />
+            <text x="58" y="111" fill="#16203A" font-size="13" font-weight="600" font-family="var(--font-body)">Trade Licence</text>
+            <text x="44" y="146" fill="#16203A" font-size="22" font-weight="700" font-family="var(--font-display)">45 days</text>
+            <text x="44" y="168" fill="#56617A" font-size="11.5" font-family="var(--font-body)">until renewal is due</text>
+          </g>
+
+          <g>
+            <rect x="228" y="84" width="184" height="108" rx="10" fill="#F4F5F8" stroke="#E2E5EC" />
+            <circle cx="248" cy="106" r="5" fill="#3E9C6E" />
+            <text x="262" y="111" fill="#16203A" font-size="13" font-weight="600" font-family="var(--font-body)">Health Insurance</text>
+            <text x="248" y="146" fill="#16203A" font-size="22" font-weight="700" font-family="var(--font-display)">Active</text>
+            <text x="248" y="168" fill="#56617A" font-size="11.5" font-family="var(--font-body)">28 employees covered</text>
+          </g>
+
+          <g>
+            <rect x="432" y="84" width="184" height="108" rx="10" fill="#FBEEEE" stroke="#F0D3D3" />
+            <circle cx="452" cy="106" r="5" fill="#C62828" />
+            <text x="466" y="111" fill="#16203A" font-size="13" font-weight="600" font-family="var(--font-body)">Employee Visas</text>
+            <text x="452" y="146" fill="#16203A" font-size="22" font-weight="700" font-family="var(--font-display)">2 expiring</text>
+            <text x="452" y="168" fill="#56617A" font-size="11.5" font-family="var(--font-body)">within the next 30 days</text>
+          </g>
+
+          <!-- progress rows -->
+          <text x="24" y="228" fill="#16203A" font-size="13" font-weight="600" font-family="var(--font-body)">Emirates ID Renewals</text>
+          <rect x="24" y="238" width="592" height="10" rx="5" fill="#E2E5EC" />
+          <rect x="24" y="238" width="410" height="10" rx="5" fill="#10192E" />
+          <text x="592" y="228" fill="#56617A" font-size="12" text-anchor="end" font-family="var(--font-body)">70%</text>
+
+          <text x="24" y="278" fill="#16203A" font-size="13" font-weight="600" font-family="var(--font-body)">Labour Card Status</text>
+          <rect x="24" y="288" width="592" height="10" rx="5" fill="#E2E5EC" />
+          <rect x="24" y="288" width="530" height="10" rx="5" fill="#C62828" />
+          <text x="592" y="278" fill="#56617A" font-size="12" text-anchor="end" font-family="var(--font-body)">90%</text>
+
+          <!-- employee list preview -->
+          <rect x="24" y="320" width="592" height="116" rx="10" fill="#FFFFFF" stroke="#E2E5EC" />
+          <text x="40" y="344" fill="#16203A" font-size="12.5" font-weight="600" font-family="var(--font-body)">Employee</text>
+          <text x="300" y="344" fill="#16203A" font-size="12.5" font-weight="600" font-family="var(--font-body)">Document</text>
+          <text x="480" y="344" fill="#16203A" font-size="12.5" font-weight="600" font-family="var(--font-body)">Status</text>
+          <line x1="40" y1="354" x2="600" y2="354" stroke="#E2E5EC" />
+
+          <circle cx="46" cy="376" r="10" fill="#DCE1EC" />
+          <text x="64" y="380" fill="#16203A" font-size="12.5" font-family="var(--font-body)">A. Rahman</text>
+          <text x="300" y="380" fill="#56617A" font-size="12.5" font-family="var(--font-body)">Employment Visa</text>
+          <rect x="480" y="368" width="66" height="20" rx="10" fill="#E9F4EE" />
+          <text x="513" y="381.5" fill="#2C7A50" font-size="11" text-anchor="middle" font-family="var(--font-body)">Valid</text>
+
+          <circle cx="46" cy="408" r="10" fill="#DCE1EC" />
+          <text x="64" y="412" fill="#16203A" font-size="12.5" font-family="var(--font-body)">S. Khan</text>
+          <text x="300" y="412" fill="#56617A" font-size="12.5" font-family="var(--font-body)">Emirates ID</text>
+          <rect x="480" y="400" width="90" height="20" rx="10" fill="#FBEEEE" />
+          <text x="525" y="413.5" fill="#B23A3A" font-size="11" text-anchor="middle" font-family="var(--font-body)">Expiring</text>
+        </g>
+        <rect x="0.5" y="0.5" width="639" height="459" rx="18" fill="none" stroke="#E2E5EC" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  .platform-teaser { background: var(--bg-alt); }
+  .platform-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; }
+  .platform-copy h2 { margin-bottom: 16px; }
+  .platform-copy .lede { margin-bottom: 22px; }
+  .platform-points { list-style: none; margin: 0 0 8px; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .platform-points li { position: relative; padding-left: 22px; font-size: 0.95rem; color: var(--text); font-weight: 500; }
+  .platform-points li::before {
+    content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px;
+    background: var(--red-600); border-radius: 2px;
+  }
+
+  .platform-visual { position: relative; perspective: 1200px; }
+  .soon-badge {
+    position: absolute; top: -14px; right: 18px; z-index: 2;
+    background: var(--red-600); color: #fff; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase; padding: 8px 16px; border-radius: 999px;
+    box-shadow: 0 8px 18px rgba(198, 40, 40, 0.28);
+  }
+  .dashboard-svg {
+    width: 100%; height: auto; display: block; border-radius: 18px;
+    box-shadow: 0 24px 48px rgba(16, 25, 46, 0.16), 0 4px 12px rgba(16, 25, 46, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transform: rotateX(0deg) rotateY(0deg);
+    will-change: transform;
+  }
+
+  @media (max-width: 980px) {
+    .platform-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .soon-badge { top: -10px; right: 10px; font-size: 0.62rem; padding: 6px 12px; }
+  }
+</style>
+
+<script>
+  const wrap = document.getElementById("dashboard-tilt");
+  const svg = wrap?.querySelector(".dashboard-svg") as HTMLElement | null;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (wrap && svg && !reduceMotion && window.matchMedia("(hover: hover)").matches) {
+    wrap.addEventListener("mousemove", (e) => {
+      const rect = wrap.getBoundingClientRect();
+      const x = (e as MouseEvent).clientX - rect.left;
+      const y = (e as MouseEvent).clientY - rect.top;
+      const rotateY = ((x / rect.width) - 0.5) * 10;
+      const rotateX = ((y / rect.height) - 0.5) * -10;
+      svg.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    wrap.addEventListener("mouseleave", () => {
+      svg.style.transform = "rotateX(0deg) rotateY(0deg)";
+    });
+  }
+</script>

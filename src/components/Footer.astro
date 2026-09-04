@@ -6,9 +6,10 @@ const year = new Date().getFullYear();
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand" aria-label={`${site.name} — Home`}>
-        <img src="/images/logo.jpg" alt="" width="36" height="36" />
+        <img src="/images/logo-icon.png" alt="" width="36" height="36" />
         <span>Bin Majeed</span>
       </a>
+      <span class="tagline-pill">Solutions Simplified</span>
       <p>Documents clearing, PRO services and business setup support for individuals and companies across Dubai and the UAE.</p>
     </div>
 
@@ -54,8 +55,13 @@ const year = new Date().getFullYear();
     display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px;
     padding-bottom: 48px; border-bottom: 1px solid var(--border-on-navy);
   }
-  .footer-brand .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin-bottom: 14px; }
+  .footer-brand .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin-bottom: 12px; }
   .footer-brand .brand img { border-radius: var(--radius-sm); }
+  .tagline-pill {
+    display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-on-navy); border: 1px solid var(--border-on-navy); border-radius: 999px;
+    padding: 5px 14px; margin-bottom: 16px;
+  }
   .footer-brand p { color: var(--text-on-navy-muted); font-size: 0.92rem; max-width: 32ch; margin: 0; }
   .footer-col h3 { color: var(--text-on-navy); font-size: 0.85rem; text-transform: none; margin-bottom: 16px; font-family: var(--font-body); font-weight: 600; }
   .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
